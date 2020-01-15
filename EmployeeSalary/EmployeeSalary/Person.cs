@@ -15,87 +15,25 @@ namespace EmployeeSalary
 
         public Person(string firstName, string lastName, int age, double salary)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Age = age;
-            Salary = salary;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.salary = salary;
         }
 
         public string FirstName
         {
-            get
-            {
-                return this.firstName;
-            }
-
-            set
-            {
-                if (value.Length < 3)
-                {
-                    throw new ArgumentException("First name cannot be less than 3 symbols.");
-                }
-
-                this.firstName = value;
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                return this.lastName;
-            }
-
-            set
-            {
-                if (value.Length < 5)
-                {
-                    throw new ArgumentException("Last name cannot be less than 5 symbols.");
-                }
-
-                this.lastName = value;
-            }
+            get { return this.firstName; }
         }
 
         public int Age
         {
-            get
-            {
-                return this.age;
-            }
-
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("People under 18 years, cannot work.");
-                }
-
-                this.age = value;
-            }
-        }
-
-        public double Salary
-        {
-            get
-            {
-                return this.salary;
-            }
-
-            set
-            {
-                if (value < 350)
-                {
-                    throw new ArgumentException("Salary cannot be less than 350$");
-                }
-
-                this.salary = value;
-            }
+            get { return this.age; }
         }
 
         public override string ToString()
         {
-            return $"{this.firstName} {this.lastName} have {this.salary} monthly";
+            return $"{this.firstName} {this.lastName} get {this.salary:F2} leva";
         }
 
         public void IncreaseSalary(double percent)

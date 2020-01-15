@@ -8,19 +8,20 @@ namespace EmployeeSalary
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            Console.WriteLine("Lines: ");
             var lines = int.Parse(Console.ReadLine());
             var persons = new List<Person>();
-
-            //U petlji kreiramo novu osobu. Problem: Resiti parametre unutar konstruktora, lines oznacava koliko puta prolazimo kroz petlju!!!
             for (int i = 0; i < lines; i++)
             {
-                var person = new Person("Sam", "Smith", 18, 350.5);
+                var cmdArgs = Console.ReadLine().Split();
+                var person = new Person(cmdArgs[0], cmdArgs[1], int.Parse(cmdArgs[2]), double.Parse(cmdArgs[3]));
+
                 persons.Add(person);
             }
 
-            //Upisati bonus u % za povecanje plate
+            Console.WriteLine("Bonus in %: ");
             var bonus = double.Parse(Console.ReadLine());
             persons.ForEach(p => p.IncreaseSalary(bonus));
             persons.ForEach(p => Console.WriteLine(p.ToString()));
