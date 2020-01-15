@@ -15,10 +15,10 @@ namespace EmployeeSalary
 
         public Person(string firstName, string lastName, int age, double salary)
         {
-            _firstName = firstName;
-            _lastName = lastName;
-            _age = age;
-            _salary = salary;
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+            Salary = salary;
         }
 
         public string FirstName
