@@ -8,43 +8,43 @@ namespace EmployeeSalary
 {
     public class Person
     {
-        private string firstName;
-        private string lastName;
-        private int age;
-        private double salary;
+        private string _firstName;
+        private string _lastName;
+        private int _age;
+        private double _salary;
 
         public Person(string firstName, string lastName, int age, double salary)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.age = age;
-            this.salary = salary;
+            _firstName = firstName;
+            _lastName = lastName;
+            _age = age;
+            _salary = salary;
         }
 
         public string FirstName
         {
-            get { return this.firstName; }
+            get { return _firstName; }
         }
 
         public int Age
         {
-            get { return this.age; }
+            get { return _age; }
         }
 
         public override string ToString()
         {
-            return $"{this.firstName} {this.lastName} get {this.salary:F2} leva";
+            return $"{_firstName} {_lastName} get {_salary}$";
         }
 
         public void IncreaseSalary(double percent)
         {
-            if (this.age > 30)
+            if (_age > 30)
             {
-                this.salary += this.salary * percent / 100;
+                _salary += _salary * percent / 100;
             }
             else
             {
-                this.salary += this.salary * percent / 200;
+                _salary += _salary * percent / 200;
             }
         }
     }
