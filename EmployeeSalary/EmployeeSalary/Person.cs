@@ -24,11 +24,61 @@ namespace EmployeeSalary
         public string FirstName
         {
             get { return _firstName; }
+
+            set
+            {
+                if (value.Length < 3)
+                {
+                    throw new ArgumentException("Name cannot be less than 3 chars");
+                }
+
+                _firstName = value;
+            }
+        }
+
+        public string LastName
+        {
+            get { return _lastName; }
+
+            set
+            {
+                if (value.Length < 3)
+                {
+                    throw new ArgumentException("Last name cannot be less than 5 chars.");
+                }
+
+                _lastName = value;
+            }
         }
 
         public int Age
         {
             get { return _age; }
+
+            set
+            {
+                if (value < 18)
+                {
+                    throw new ArgumentException("Person under 18 years, cannot work.");
+                }
+
+                _age = value;
+            }
+        }
+
+        public double Salary
+        {
+            get { return _salary; }
+
+            set
+            {
+                if (value < 350.0)
+                {
+                    throw new ArgumentException("Salary cannot be less than 350$");
+                }
+
+                _salary = value;
+            }
         }
 
         public override string ToString()
